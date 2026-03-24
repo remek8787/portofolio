@@ -102,12 +102,13 @@
   <meta property="og:type" content="website" />
 </head>
 <body class="text-slate-800 dark:text-slate-100">
+  <a href="#home" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-3 focus:py-2 focus:rounded-lg focus:bg-white focus:text-slate-900 focus:shadow">Lewati ke konten</a>
   <!-- Header -->
   <header class="sticky top-0 z-40 backdrop-blur bg-white/70 dark:bg-slate-900/60 border-b border-slate-200/70 dark:border-slate-700/50">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#home" class="font-extrabold text-xl tracking-tight">Ananta<span class="text-denta-600">.</span></a>
 
-      <nav class="hidden sm:flex gap-6 text-sm font-medium">
+      <nav aria-label="Navigasi utama" class="hidden sm:flex gap-6 text-sm font-medium">
         <a href="#tentang" class="hover:text-denta-700">Tentang</a>
         <a href="#keahlian" class="hover:text-denta-700">Keahlian</a>
         <a href="#produk" class="hover:text-denta-700">Produk</a>
@@ -133,7 +134,7 @@
 
     <div class="max-w-6xl mx-auto px-4 py-16 sm:py-24 grid md:grid-cols-[auto,1fr] gap-10 items-center">
       <div class="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mx-auto md:mx-0 tilt" data-animate>
-        <img src="assets/ananta.jpg" alt="Foto Ananta Satriya Ferdian Putra" class="w-full h-full object-cover rounded-3xl ring-4 ring-white dark:ring-slate-800 shadow-soft dark:shadow-none">
+        <img src="assets/ananta.jpg" alt="Foto Ananta Satriya Ferdian Putra" loading="eager" decoding="async" class="w-full h-full object-cover rounded-3xl ring-4 ring-white dark:ring-slate-800 shadow-soft dark:shadow-none">
         <div class="absolute -bottom-3 -right-3 rounded-2xl px-3 py-1.5 text-xs font-semibold card">NOC – Dentanet</div>
         <div class="absolute inset-0 rounded-3xl pointer-events-none overflow-hidden">
           <span class="absolute -inset-1 opacity-0 hover:opacity-100 transition">
@@ -377,6 +378,7 @@
             </div>
             <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Monitoring & provisioning OLT lintas vendor (ZTE, HSGQ, HS AIRPRO GLOBAL, dll). Mendukung <strong>open isolir pelanggan</strong> dan integrasi <strong>semi billing</strong>.</p>
           </div>
+        </div>
       </div>
     </div>
   </section>
@@ -425,16 +427,16 @@
       <form class="p-6 card" data-animate>
         <div class="grid gap-4">
           <div>
-            <label class="text-sm font-medium">Nama</label>
-            <input type="text" class="mt-1 w-full rounded-xl border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2" placeholder="Nama Anda" />
+            <label for="nama" class="text-sm font-medium">Nama</label>
+            <input id="nama" name="nama" type="text" class="mt-1 w-full rounded-xl border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2" placeholder="Nama Anda" />
           </div>
           <div>
-            <label class="text-sm font-medium">Email</label>
-            <input type="email" class="mt-1 w-full rounded-xl border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2" placeholder="nama@email.com" />
+            <label for="email" class="text-sm font-medium">Email</label>
+            <input id="email" name="email" type="email" class="mt-1 w-full rounded-xl border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2" placeholder="nama@email.com" />
           </div>
           <div>
-            <label class="text-sm font-medium">Pesan</label>
-            <textarea class="mt-1 w-full rounded-xl border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 h-28" placeholder="Tulis pesan…"></textarea>
+            <label for="pesan" class="text-sm font-medium">Pesan</label>
+            <textarea id="pesan" name="pesan" class="mt-1 w-full rounded-xl border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 h-28" placeholder="Tulis pesan…"></textarea>
           </div>
           <button type="button" onclick="alert('Form demo. Silakan hubungi via Email/WhatsApp.')" class="rounded-2xl bg-emerald-500 text-white px-5 py-3 font-semibold hover:bg-emerald-600 magnet">Kirim</button>
         </div>
@@ -559,6 +561,22 @@
       })
     }, { threshold: .6 });
     counters.forEach(c=> ioCounter.observe(c));
+
+    // Active nav link while scrolling
+    const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
+    const sections = navLinks.map((a)=> document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const setActive = (id) => {
+      navLinks.forEach((a)=>{
+        const active = a.getAttribute('href') === `#${id}`;
+        a.classList.toggle('text-denta-700', active);
+        a.classList.toggle('dark:text-denta-300', active);
+      });
+    };
+    const ioNav = new IntersectionObserver((entries)=>{
+      const visible = entries.filter(e => e.isIntersecting).sort((a,b)=> b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible?.target?.id) setActive(visible.target.id);
+    }, { threshold: 0.45 });
+    sections.forEach((s)=> ioNav.observe(s));
   </script>
 </body>
 </html>
