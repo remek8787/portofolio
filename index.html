@@ -31,6 +31,15 @@
               '0%,100%': { backgroundPosition: '0% 50%' },
               '50%': { backgroundPosition: '100% 50%' }
             },
+            float: {
+              '0%,100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' }
+            },
+            pulseRing: {
+              '0%': { transform: 'scale(0.95)', opacity: '.65' },
+              '70%': { transform: 'scale(1.08)', opacity: '.15' },
+              '100%': { transform: 'scale(1.14)', opacity: '0' }
+            },
             blob: {
               '0%':   { transform: 'translate(0,0) scale(1)' },
               '33%':  { transform: 'translate(12px,-8px) scale(1.04)' },
@@ -44,6 +53,8 @@
           },
           animation: {
             gradient: 'gradient 12s ease infinite',
+            float: 'float 4.5s ease-in-out infinite',
+            pulseRing: 'pulseRing 2.8s ease-out infinite',
             blob: 'blob 14s ease-in-out infinite',
             shimmer: 'shimmer 1.8s linear infinite'
           }
@@ -95,6 +106,44 @@
     /* Tilt 3D perspective helpers */
     .tilt { transform-style: preserve-3d; perspective: 1000px; }
     .tilt > * { transform: translateZ(0.0001px); }
+
+    /* Scroll progress */
+    #scrollProgress {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 3px;
+      width: 0;
+      z-index: 60;
+      background: linear-gradient(90deg, #2563eb, #10b981, #a855f7);
+      box-shadow: 0 0 16px rgba(59,130,246,.45);
+    }
+
+    /* Hero visual extras */
+    .hero-ring {
+      position: absolute;
+      inset: -10px;
+      border-radius: 1.5rem;
+      background: conic-gradient(from 0deg, rgba(37,99,235,.45), rgba(16,185,129,.45), rgba(168,85,247,.45), rgba(37,99,235,.45));
+      filter: blur(14px);
+      opacity: .55;
+      z-index: -1;
+      animation: gradient 10s linear infinite;
+      background-size: 200% 200%;
+    }
+
+    .mesh-bg {
+      background-image:
+        linear-gradient(rgba(15,23,42,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15,23,42,.045) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(circle at center, black 35%, transparent 80%);
+    }
+    .dark .mesh-bg {
+      background-image:
+        linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px);
+    }
   </style>
 
   <meta property="og:title" content="Portofolio – Ananta Satriya Ferdian Putra" />
@@ -102,6 +151,7 @@
   <meta property="og:type" content="website" />
 </head>
 <body class="text-slate-800 dark:text-slate-100">
+  <div id="scrollProgress" aria-hidden="true"></div>
   <a href="#home" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-3 focus:py-2 focus:rounded-lg focus:bg-white focus:text-slate-900 focus:shadow">Lewati ke konten</a>
   <!-- Header -->
   <header class="sticky top-0 z-40 backdrop-blur bg-white/70 dark:bg-slate-900/60 border-b border-slate-200/70 dark:border-slate-700/50">
@@ -127,6 +177,7 @@
   <section id="home" class="relative overflow-hidden">
     <!-- Blobs -->
     <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute inset-0 mesh-bg opacity-60"></div>
       <div class="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-denta-300/40 blur-3xl animate-blob"></div>
       <div class="absolute -bottom-24 right-0 w-96 h-96 rounded-full bg-emerald-300/40 blur-3xl animate-blob" style="animation-delay:-4s"></div>
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-denta-500/10 via-emerald-500/10 to-fuchsia-500/10 blur-3xl animate-blob" style="animation-delay:-8s"></div>
@@ -134,6 +185,7 @@
 
     <div class="max-w-6xl mx-auto px-4 py-16 sm:py-24 grid md:grid-cols-[auto,1fr] gap-10 items-center">
       <div class="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mx-auto md:mx-0 tilt" data-animate>
+        <span class="hero-ring" aria-hidden="true"></span>
         <img src="assets/ananta.jpg" alt="Foto Ananta Satriya Ferdian Putra" loading="eager" decoding="async" class="w-full h-full object-cover rounded-3xl ring-4 ring-white dark:ring-slate-800 shadow-soft dark:shadow-none">
         <div class="absolute -bottom-3 -right-3 rounded-2xl px-3 py-1.5 text-xs font-semibold card">NOC – Dentanet</div>
         <div class="absolute inset-0 rounded-3xl pointer-events-none overflow-hidden">
@@ -152,6 +204,12 @@
           <a href="#pengalaman" class="inline-flex items-center gap-2 rounded-2xl border border-slate-300 dark:border-slate-600 px-5 py-3 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition magnet">Pengalaman</a>
         </div>
         <div class="mt-4 text-sm text-slate-500 dark:text-slate-400">Donomulyo, Kabupaten Malang • <span id="age">25</span> Tahun</div>
+
+        <div class="mt-4 flex flex-wrap gap-2 text-xs" data-animate style="--d:.2s">
+          <span class="px-3 py-1 rounded-full bg-denta-100 text-denta-700 dark:bg-denta-900/40 dark:text-denta-200 animate-float">BGP Engineer</span>
+          <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-200 animate-float" style="animation-delay:-1.2s">NOC Specialist</span>
+          <span class="px-3 py-1 rounded-full bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/40 dark:text-fuchsia-200 animate-float" style="animation-delay:-2.1s">GPON Automation</span>
+        </div>
 
         <!-- Stats with counters -->
         <div class="mt-8 grid grid-cols-3 gap-3 max-w-md">
@@ -444,6 +502,24 @@
     </div>
   </section>
 
+  <!-- Quick Availability Strip -->
+  <section class="pb-14">
+    <div class="max-w-6xl mx-auto px-4" data-animate>
+      <div class="relative p-[1px] rounded-3xl bg-gradient-to-r from-denta-500/80 via-emerald-500/80 to-fuchsia-500/80 animate-gradient bg-[length:200%_200%]">
+        <div class="rounded-3xl card px-6 py-5 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">Available for collaboration</p>
+            <h3 class="mt-1 text-lg font-bold">Butuh audit jaringan, setup OLT, atau automasi NOC?</h3>
+          </div>
+          <div class="flex gap-3">
+            <a href="https://wa.me/6285804783530" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-emerald-500 text-white px-4 py-2.5 font-semibold hover:bg-emerald-600 magnet">Chat WhatsApp</a>
+            <a href="mailto:anantasatriyaferdian@gmail.com" class="inline-flex items-center rounded-xl border border-slate-300 dark:border-slate-600 px-4 py-2.5 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 magnet">Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="py-10 border-t border-slate-200/70 dark:border-slate-700/50">
     <div class="max-w-6xl mx-auto px-4 text-sm text-slate-500 dark:text-slate-400 flex items-center justify-between">
       <div>© <span id="year"></span> Ananta Satriya Ferdian Putra</div>
@@ -468,6 +544,17 @@
   <script>
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll progress line
+    const progressBar = document.getElementById('scrollProgress');
+    const onScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? (scrollTop / max) * 100 : 0;
+      if (progressBar) progressBar.style.width = `${ratio}%`;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
     // Optional: update age automatically (change birth year when needed)
     const birthYear = 2000; // ganti jika perlu
