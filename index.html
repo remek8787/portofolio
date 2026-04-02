@@ -91,6 +91,7 @@
     @media (prefers-reduced-motion: reduce){
       [data-animate]{opacity:1 !important; transform:none !important; transition:none !important}
       .tilt, .parallax { transform: none !important; }
+      .loader-box { animation: none !important; }
     }
 
     /* Gradient text */
@@ -117,6 +118,62 @@
       z-index: 60;
       background: linear-gradient(90deg, #2563eb, #10b981, #a855f7);
       box-shadow: 0 0 16px rgba(59,130,246,.45);
+    }
+
+    /* Page loader */
+    body.is-loading { overflow: hidden; }
+    #pageLoader {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(700px 350px at 20% 0%, rgba(59,130,246,.18), transparent 60%),
+        radial-gradient(700px 350px at 80% 100%, rgba(16,185,129,.15), transparent 60%),
+        #f8fafc;
+      transition: opacity .45s ease, visibility .45s ease;
+    }
+    .dark #pageLoader {
+      background:
+        radial-gradient(700px 350px at 20% 0%, rgba(59,130,246,.2), transparent 60%),
+        radial-gradient(700px 350px at 80% 100%, rgba(168,85,247,.16), transparent 60%),
+        #0b1220;
+    }
+    #pageLoader.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .loader-wrap { text-align: center; }
+    .loader-title {
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      color: #334155;
+      margin-bottom: .9rem;
+    }
+    .dark .loader-title { color: #cbd5e1; }
+    .loader-box-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 14px);
+      gap: 8px;
+      justify-content: center;
+    }
+    .loader-box {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, #2563eb, #10b981);
+      box-shadow: 0 6px 14px rgba(37,99,235,.24);
+      animation: boxLoader 1.05s ease-in-out infinite;
+    }
+    .loader-box:nth-child(2), .loader-box:nth-child(5), .loader-box:nth-child(8) { animation-delay: .12s; }
+    .loader-box:nth-child(3), .loader-box:nth-child(6), .loader-box:nth-child(9) { animation-delay: .24s; }
+    @keyframes boxLoader {
+      0%, 100% { transform: translateY(0) scale(1); opacity: .55; }
+      45% { transform: translateY(-10px) scale(1.08); opacity: 1; }
     }
 
     /* Hero visual extras */
@@ -150,8 +207,18 @@
   <meta property="og:description" content="NOC (Network Operation Center) – PT Denta Sejahtera Group" />
   <meta property="og:type" content="website" />
 </head>
-<body class="text-slate-800 dark:text-slate-100">
+<body class="text-slate-800 dark:text-slate-100 is-loading">
   <div id="scrollProgress" aria-hidden="true"></div>
+  <div id="pageLoader" aria-hidden="true">
+    <div class="loader-wrap">
+      <div class="loader-title">Loading Portfolio</div>
+      <div class="loader-box-grid" role="presentation">
+        <span class="loader-box"></span><span class="loader-box"></span><span class="loader-box"></span>
+        <span class="loader-box"></span><span class="loader-box"></span><span class="loader-box"></span>
+        <span class="loader-box"></span><span class="loader-box"></span><span class="loader-box"></span>
+      </div>
+    </div>
+  </div>
   <a href="#home" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-3 focus:py-2 focus:rounded-lg focus:bg-white focus:text-slate-900 focus:shadow">Lewati ke konten</a>
   <!-- Header -->
   <header class="sticky top-0 z-40 backdrop-blur bg-white/70 dark:bg-slate-900/60 border-b border-slate-200/70 dark:border-slate-700/50">
@@ -555,6 +622,21 @@
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    // Box loader (opening animation)
+    const pageLoader = document.getElementById('pageLoader');
+    const finishLoader = () => {
+      if (!pageLoader) return;
+      pageLoader.classList.add('hide');
+      document.body.classList.remove('is-loading');
+      setTimeout(() => pageLoader.remove(), 520);
+    };
+    if (document.readyState === 'complete') {
+      setTimeout(finishLoader, 320);
+    } else {
+      window.addEventListener('load', () => setTimeout(finishLoader, 320), { once: true });
+      setTimeout(finishLoader, 2200); // fallback
+    }
 
     // Optional: update age automatically (change birth year when needed)
     const birthYear = 2000; // ganti jika perlu
