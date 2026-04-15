@@ -1,0 +1,29 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="36" fill="#111827"/>
+  <rect x="30" y="30" width="1140" height="660" rx="28" fill="url(#grad)"/>
+  <rect x="68" y="78" width="1064" height="70" rx="22" fill="#FFFFFF" opacity="0.94"/>
+  <rect x="68" y="178" width="690" height="436" rx="24" fill="#FFFFFF" opacity="0.94"/>
+  <rect x="780" y="178" width="352" height="202" rx="24" fill="#0EA5E9"/>
+  <rect x="780" y="404" width="352" height="210" rx="24" fill="#10B981"/>
+  <rect x="100" y="104" width="240" height="18" rx="9" fill="#2563EB"/>
+  <text x="98" y="220" fill="#0F172A" font-family="Arial, sans-serif" font-size="28" font-weight="700">Billing-Air</text>
+  <text x="98" y="260" fill="#475569" font-family="Arial, sans-serif" font-size="22">Operational billing workflow for fast iteration</text>
+  <rect x="98" y="300" width="632" height="66" rx="18" fill="#F8FAFC"/>
+  <rect x="98" y="386" width="632" height="66" rx="18" fill="#F8FAFC"/>
+  <rect x="98" y="472" width="632" height="66" rx="18" fill="#F8FAFC"/>
+  <text x="128" y="342" fill="#0F172A" font-family="Arial, sans-serif" font-size="20">Customer billing flow</text>
+  <text x="128" y="428" fill="#0F172A" font-family="Arial, sans-serif" font-size="20">Rapid edit → upload → verify cycle</text>
+  <text x="128" y="514" fill="#0F172A" font-family="Arial, sans-serif" font-size="20">Clean admin-first UI</text>
+  <text x="810" y="238" fill="white" font-family="Arial, sans-serif" font-size="20">Customer access</text>
+  <text x="810" y="294" fill="white" font-family="Arial, sans-serif" font-size="56" font-weight="700">DSA</text>
+  <text x="810" y="330" fill="#E0F2FE" font-family="Arial, sans-serif" font-size="22">ID-based login pattern</text>
+  <text x="810" y="448" fill="white" font-family="Arial, sans-serif" font-size="20">Deployment style</text>
+  <text x="810" y="504" fill="white" font-family="Arial, sans-serif" font-size="40" font-weight="700">Live Iteration</text>
+  <text x="810" y="548" fill="#D1FAE5" font-family="Arial, sans-serif" font-size="22">Small changes, immediate verification</text>
+  <defs>
+    <linearGradient id="grad" x1="30" y1="30" x2="1170" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFF6FF"/>
+      <stop offset="1" stop-color="#ECFDF5"/>
+    </linearGradient>
+  </defs>
+</svg>

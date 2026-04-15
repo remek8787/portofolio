@@ -1,0 +1,29 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="36" fill="#020617"/>
+  <rect x="36" y="36" width="1128" height="648" rx="28" fill="url(#bg)"/>
+  <rect x="78" y="86" width="1044" height="76" rx="22" fill="#0F172A" opacity="0.92"/>
+  <rect x="78" y="194" width="488" height="432" rx="26" fill="#0B1220"/>
+  <rect x="590" y="194" width="532" height="130" rx="24" fill="#2563EB"/>
+  <rect x="590" y="346" width="254" height="280" rx="24" fill="#14B8A6"/>
+  <rect x="868" y="346" width="254" height="280" rx="24" fill="#F97316"/>
+  <text x="108" y="132" fill="white" font-family="Arial, sans-serif" font-size="30" font-weight="700">NOC / ISP Toolkit</text>
+  <text x="108" y="236" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">Operational Focus</text>
+  <text x="108" y="288" fill="#93C5FD" font-family="Arial, sans-serif" font-size="20">• Monitoring & observability</text>
+  <text x="108" y="328" fill="#93C5FD" font-family="Arial, sans-serif" font-size="20">• Alerting & incident response</text>
+  <text x="108" y="368" fill="#93C5FD" font-family="Arial, sans-serif" font-size="20">• OLT / GPON provisioning</text>
+  <text x="108" y="408" fill="#93C5FD" font-family="Arial, sans-serif" font-size="20">• Webhook & API automation</text>
+  <text x="108" y="448" fill="#93C5FD" font-family="Arial, sans-serif" font-size="20">• WA gateway integrations</text>
+  <text x="108" y="488" fill="#93C5FD" font-family="Arial, sans-serif" font-size="20">• Reliability-driven workflows</text>
+  <text x="620" y="248" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">Network Operations Center</text>
+  <text x="620" y="292" fill="#DBEAFE" font-family="Arial, sans-serif" font-size="20">Built for fast diagnostics, uptime visibility, and operational automation</text>
+  <text x="620" y="400" fill="white" font-family="Arial, sans-serif" font-size="22" font-weight="700">Provisioning</text>
+  <text x="620" y="444" fill="#CCFBF1" font-family="Arial, sans-serif" font-size="18">OLT setup, open isolir, semi billing flow</text>
+  <text x="898" y="400" fill="white" font-family="Arial, sans-serif" font-size="22" font-weight="700">Automation</text>
+  <text x="898" y="444" fill="#FED7AA" font-family="Arial, sans-serif" font-size="18">Webhook, API integration, alert routing</text>
+  <defs>
+    <linearGradient id="bg" x1="36" y1="36" x2="1164" y2="684" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+</svg>

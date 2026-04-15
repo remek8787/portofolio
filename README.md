@@ -25,3 +25,9 @@ Portofolio pribadi **Ananta Satriya Ferdian Putra**.
 
 ## Tech approach
 Repo ini dibuat sebagai **static portfolio landing page** yang ringan, cepat dibuka, dan gampang di-host di GitHub Pages atau static hosting lain.
+
+## GitHub Pages
+Workflow deploy GitHub Pages sudah disiapkan di:
+- `.github/workflows/deploy-pages.yml`
+
+Setelah GitHub Pages diaktifkan pada repo, branch `main` akan otomatis ter-deploy sebagai website portfolio publik.
