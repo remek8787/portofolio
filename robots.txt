@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anantasatriya.my.id/sitemap.xml
