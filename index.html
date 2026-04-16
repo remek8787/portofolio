@@ -35,6 +35,7 @@
   </script>
 </head>
 <body>
+  <div class="scroll-line"></div>
   <div class="nav-wrap">
     <div class="container nav">
       <a class="brand" href="/">Ananta<span>.</span></a>
@@ -55,11 +56,11 @@
     </div>
   </div>
 
-  <header class="hero">
+  <header class="hero reveal">
     <div class="top-glow"></div>
     <div class="top-glow two"></div>
     <div class="container hero-grid">
-      <div class="hero-card">
+      <div class="hero-card glass-shine">
         <span class="badge">⚡ Portfolio premium • live-ready • personal brand</span>
         <h1 class="hero-title">Bangun sistem yang <span class="grad">dipakai beneran</span>, bukan cuma demo.</h1>
         <p>
@@ -70,6 +71,7 @@
         <div class="hero-cta">
           <a class="btn primary" href="/projects.html">Lihat Project Showcase</a>
           <a class="btn secondary" href="/contact.html">Hubungi Saya</a>
+          <a class="btn secondary" href="/cv.html">Download CV</a>
         </div>
         <div class="hero-stats">
           <div class="stat">
@@ -110,7 +112,7 @@
     </div>
   </header>
 
-  <section id="tentang" class="block">
+  <section id="tentang" class="block reveal">
     <div class="container">
       <div class="section-head">
         <div class="section-kicker">Tentang saya</div>
@@ -136,7 +138,7 @@
     </div>
   </section>
 
-  <section id="keahlian" class="block">
+  <section id="keahlian" class="block reveal">
     <div class="container">
       <div class="section-head">
         <div class="section-kicker">Keahlian inti</div>
@@ -177,38 +179,38 @@
     </div>
   </section>
 
-  <section id="proyek" class="block">
+  <section id="proyek" class="block reveal">
     <div class="container">
       <div class="section-head">
         <div class="section-kicker">Project showcase</div>
         <h2>Beberapa sistem dan konsep yang mewakili cara kerja saya.</h2>
       </div>
       <div class="grid-3">
-        <article class="card project-card">
-          <div class="project-cover">
+        <article class="card project-card glass-shine">
+          <div class="project-cover"><img src="/assets/projects/klinik-dentamedika.svg" alt="Visual project Klinik Dentamedika" /></div>
+          <div class="project-content">
             <strong>Klinik Dentamedika</strong>
+            <div class="project-meta"><span>PHP</span><span>MySQL</span><span>Live System</span><span>Medical Workflow</span></div>
             <p class="muted">Sistem klinik live untuk pasien, antrian, rekam medis, billing, master obat, master tindakan, dan workflow operasional klinik.</p>
           </div>
-          <div class="project-meta"><span>PHP</span><span>MySQL</span><span>Live System</span><span>Medical Workflow</span></div>
-          <p class="muted">Dibangun dengan fokus ke kecepatan operasional, form yang jelas, serta perbaikan live berbasis kebutuhan nyata di lapangan.</p>
         </article>
 
-        <article class="card project-card">
-          <div class="project-cover">
+        <article class="card project-card glass-shine">
+          <div class="project-cover"><img src="/assets/projects/billing-air.svg" alt="Visual project Billing-Air" /></div>
+          <div class="project-content">
             <strong>Billing-Air</strong>
+            <div class="project-meta"><span>Operational Tool</span><span>Dashboard</span><span>Fast Workflow</span></div>
             <p class="muted">Tool billing operasional dengan workflow cepat untuk pelanggan, tagihan, pembacaan meter, dan dashboard admin yang ringkas.</p>
           </div>
-          <div class="project-meta"><span>Operational Tool</span><span>Dashboard</span><span>Fast Workflow</span></div>
-          <p class="muted">Dirancang untuk alur edit → upload → verify yang cepat, cocok untuk lingkungan kerja yang butuh hasil langsung.</p>
         </article>
 
-        <article class="card project-card">
-          <div class="project-cover">
+        <article class="card project-card glass-shine">
+          <div class="project-cover"><img src="/assets/projects/noc-toolkit.svg" alt="Visual project NMS GPON dan ISP toolkit" /></div>
+          <div class="project-content">
             <strong>NMS GPON / ISP Toolkit</strong>
+            <div class="project-meta"><span>SNMP</span><span>OLT ZTE</span><span>NOC</span><span>Automation</span></div>
             <p class="muted">Konsep dan pondasi monitoring ONU/OLT, serial number, optical power, alarm, provisioning helper, dan observability untuk jaringan ISP.</p>
           </div>
-          <div class="project-meta"><span>SNMP</span><span>OLT ZTE</span><span>NOC</span><span>Automation</span></div>
-          <p class="muted">Didesain untuk menjawab kebutuhan lapangan: status ONU, redaman, identity device, dan potensi integrasi ke customer mapping.</p>
         </article>
       </div>
       <div class="mini-nav">
@@ -220,7 +222,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block reveal">
     <div class="container">
       <div class="section-head">
         <div class="section-kicker">Highlight</div>
@@ -235,7 +237,7 @@
     </div>
   </section>
 
-  <section id="pengalaman" class="block">
+  <section id="pengalaman" class="block reveal">
     <div class="container">
       <div class="section-head">
         <div class="section-kicker">Pengalaman & style kerja</div>
@@ -271,7 +273,7 @@
     </div>
   </section>
 
-  <section id="kontak" class="block">
+  <section id="kontak" class="block reveal">
     <div class="container contact-box">
       <div class="panel card">
         <div class="section-head" style="margin-bottom: 18px;">
@@ -281,6 +283,7 @@
         </div>
         <div class="hero-cta">
           <a class="btn primary" href="/contact.html">Buka halaman kontak</a>
+          <a class="btn secondary" href="/cv.html">Download CV</a>
           <a class="btn secondary" href="https://github.com/remek8787" target="_blank" rel="noopener">GitHub profile</a>
         </div>
       </div>
@@ -290,10 +293,20 @@
             <div class="icon-dot">✉️</div>
             <div><strong>Email utama</strong><div class="muted">anantasatriya@gmail.com</div></div>
           </a>
-          <a class="contact-link" href="https://github.com/remek8787" target="_blank" rel="noopener">
-            <div class="icon-dot">🐙</div>
-            <div><strong>GitHub</strong><div class="muted">github.com/remek8787</div></div>
+          <a class="contact-link" href="https://wa.me/6285804783530" target="_blank" rel="noopener">
+            <div class="icon-dot">💬</div>
+            <div><strong>WhatsApp</strong><div class="muted">+62 858-0478-3530</div></div>
           </a>
+          <div class="social-grid">
+            <a class="contact-link" href="https://github.com/remek8787" target="_blank" rel="noopener">
+              <div class="icon-dot">🐙</div>
+              <div><strong>GitHub</strong><div class="muted">github.com/remek8787</div></div>
+            </a>
+            <a class="contact-link" href="mailto:anantasatriya@gmail.com">
+              <div class="icon-dot">📨</div>
+              <div><strong>Email</strong><div class="muted">Send direct inquiry</div></div>
+            </a>
+          </div>
           <div class="contact-link">
             <div class="icon-dot">📍</div>
             <div><strong>Base</strong><div class="muted">Donomulyo, Kabupaten Malang</div></div>
@@ -302,6 +315,8 @@
       </div>
     </div>
   </section>
+
+  <a class="floating-wa" href="https://wa.me/6285804783530" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">✆</a>
 
   <footer class="footer">
     <div class="container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
