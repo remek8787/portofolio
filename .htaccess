@@ -1,0 +1,19 @@
+Options -Indexes
+DirectoryIndex index.html index.htm
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Serve existing files and directories directly.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Static portfolio fallback.
+RewriteRule ^$ index.html [L]
+</IfModule>
+
+<FilesMatch "\.(html|css|js|svg|jpg|jpeg|png|webp|ico|txt|xml|json)$">
+Require all granted
+</FilesMatch>
