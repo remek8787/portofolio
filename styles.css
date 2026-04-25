@@ -279,3 +279,8 @@ body.light .notice { color: #166534; }
 }
 .project-card.featured-project { grid-column: span 2; }
 @media (max-width: 980px) { .project-card.featured-project { grid-column: auto; } }
+
+.service-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:18px; }
+.service-strip .card { padding:18px; }
+.service-strip strong { display:block; font-size:1.15rem; margin-bottom:6px; }
+@media (max-width: 760px) { .service-strip { grid-template-columns:1fr; } }
