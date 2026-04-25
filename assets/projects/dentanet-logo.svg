@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1400" viewBox="0 0 1400 1400">
+  <defs>
+    <linearGradient id="d-main" x1="260" y1="0" x2="1130" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#003f91"/>
+      <stop offset="0.42" stop-color="#005db8"/>
+      <stop offset="0.62" stop-color="#e00022"/>
+      <stop offset="1" stop-color="#ff2035"/>
+    </linearGradient>
+    <linearGradient id="blue-swoosh" x1="450" y1="0" x2="1170" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0077d6"/>
+      <stop offset="1" stop-color="#003f91"/>
+    </linearGradient>
+    <linearGradient id="text-blue" x1="0" x2="1"><stop stop-color="#003f91"/><stop offset="1" stop-color="#005db8"/></linearGradient>
+    <linearGradient id="text-red" x1="0" x2="1"><stop stop-color="#e00022"/><stop offset="1" stop-color="#ff2035"/></linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="20" flood-color="#08204a" flood-opacity="0.16"/>
+    </filter>
+    <clipPath id="outerD">
+      <path d="M278 238H540C714 238 854 238 954 292C1052 345 1124 444 1124 570C1124 696 1052 795 954 848C854 902 714 902 540 902H278V646L426 746V802H540C691 802 810 800 890 760C970 720 1024 650 1024 570C1024 490 970 420 890 380C810 340 691 338 540 338H464V392H278V238Z"/>
+    </clipPath>
+    <clipPath id="bottomSwoosh">
+      <path d="M497 676C604 793 742 840 904 783C1005 748 1075 674 1118 574V706C1064 814 963 890 829 912C696 934 573 895 472 806L472 676H497Z"/>
+    </clipPath>
+  </defs>
+  <rect width="1400" height="1400" fill="#ffffff"/>
+  <g filter="url(#softShadow)">
+    <path d="M278 238H540C714 238 854 238 954 292C1052 345 1124 444 1124 570C1124 696 1052 795 954 848C854 902 714 902 540 902H278V646L426 746V802H540C691 802 810 800 890 760C970 720 1024 650 1024 570C1024 490 970 420 890 380C810 340 691 338 540 338H464V392H278V238Z" fill="url(#d-main)"/>
+    <path d="M278 414L423 510C462 536 493 548 546 548H760C839 548 898 594 898 670C898 745 839 792 760 792H492V666H756C790 666 812 648 812 622C812 596 790 578 756 578H530C452 578 405 557 349 520L278 472V414Z" fill="#ffffff"/>
+    <path d="M464 340H650C789 340 891 358 963 420C1023 472 1052 542 1048 618C1032 530 969 473 881 443C806 417 715 414 594 414H464V340Z" fill="#ffffff" opacity="0.98"/>
+    <path d="M497 676C604 793 742 840 904 783C1005 748 1075 674 1118 574V706C1064 814 963 890 829 912C696 934 573 895 472 806L472 676H497Z" fill="url(#blue-swoosh)"/>
+    <path d="M344 254C312 385 331 511 432 610C474 651 478 694 478 754V902H278V646L426 746V802H540C691 802 810 800 890 760C927 741 957 717 980 687C927 802 809 862 631 862H338V238H540C655 238 755 238 838 256C689 244 509 250 344 254Z" fill="#002d78" opacity="0.2"/>
+    <path d="M684 242C791 245 885 255 954 292C1052 345 1124 444 1124 570C1124 616 1114 659 1095 697C1114 536 1042 413 908 350C847 321 768 303 669 293C680 279 686 263 684 242Z" fill="#ffffff" opacity="0.13"/>
+  </g>
+  <g font-family="Montserrat, Inter, Arial, sans-serif" font-weight="900" font-size="126" letter-spacing="2">
+    <text x="272" y="1082" fill="url(#text-blue)">DENTA</text>
+    <text x="766" y="1082" fill="url(#text-red)">NET</text>
+  </g>
+</svg>

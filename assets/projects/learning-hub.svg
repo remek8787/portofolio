@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#10213b"/></linearGradient><linearGradient id="cyan" x1="0" x2="1"><stop stop-color="#67e8f9"/><stop offset="1" stop-color="#38bdf8"/></linearGradient><linearGradient id="violet" x1="0" x2="1"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#7c3aed"/></linearGradient><linearGradient id="amber" x1="0" x2="1"><stop stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1200" height="760" rx="38" fill="url(#bg)"/>
+<circle cx="100" cy="80" r="180" fill="#22d3ee" opacity=".12"/><circle cx="1100" cy="80" r="210" fill="#8b5cf6" opacity=".14"/><circle cx="620" cy="760" r="260" fill="#f59e0b" opacity=".10"/>
+<text x="56" y="74" fill="#f8fafc" font-family="Inter,Arial" font-size="34" font-weight="900">Contoh Topologi MikroTik Rumahan/Sekolah</text>
+<text x="56" y="112" fill="#bae6fd" font-family="Inter,Arial" font-size="18" font-weight="700">WAN masuk ke router, lalu dibagi ke LAN, Wi-Fi, server, dan lab komputer</text>
+<line x1="160" y1="230" x2="330" y2="230" stroke="#fbbf24" stroke-width="5" opacity=".72" stroke-linecap="round"/>
+<rect x="177.0" y="213.0" width="136" height="30" rx="15" fill="#020617" opacity=".82"/><text x="245.0" y="235.0" fill="#e0f2fe" font-family="Inter,Arial" font-size="13" font-weight="800" text-anchor="middle">Fiber</text>
+<line x1="330" y1="230" x2="560" y2="230" stroke="#38bdf8" stroke-width="5" opacity=".72" stroke-linecap="round"/>
+<rect x="377.0" y="213.0" width="136" height="30" rx="15" fill="#020617" opacity=".82"/><text x="445.0" y="235.0" fill="#e0f2fe" font-family="Inter,Arial" font-size="13" font-weight="800" text-anchor="middle">WAN</text>
+<line x1="560" y1="230" x2="770" y2="230" stroke="#a78bfa" stroke-width="5" opacity=".72" stroke-linecap="round"/>
+<rect x="597.0" y="213.0" width="136" height="30" rx="15" fill="#020617" opacity=".82"/><text x="665.0" y="235.0" fill="#e0f2fe" font-family="Inter,Arial" font-size="13" font-weight="800" text-anchor="middle">LAN trunk</text>
+<line x1="770" y1="230" x2="940" y2="140" stroke="#38bdf8" stroke-width="5" opacity=".72" stroke-linecap="round"/>
+<rect x="787.0" y="168.0" width="136" height="30" rx="15" fill="#020617" opacity=".82"/><text x="855.0" y="190.0" fill="#e0f2fe" font-family="Inter,Arial" font-size="13" font-weight="800" text-anchor="middle">VLAN Wi-Fi</text>
+<line x1="770" y1="230" x2="950" y2="300" stroke="#38bdf8" stroke-width="5" opacity=".72" stroke-linecap="round"/>
+<rect x="792.0" y="248.0" width="136" height="30" rx="15" fill="#020617" opacity=".82"/><text x="860.0" y="270.0" fill="#e0f2fe" font-family="Inter,Arial" font-size="13" font-weight="800" text-anchor="middle">VLAN Lab</text>
+<line x1="770" y1="230" x2="770" y2="420" stroke="#fbbf24" stroke-width="5" opacity=".72" stroke-linecap="round"/>
+<rect x="702.0" y="308.0" width="136" height="30" rx="15" fill="#020617" opacity=".82"/><text x="770.0" y="330.0" fill="#e0f2fe" font-family="Inter,Arial" font-size="13" font-weight="800" text-anchor="middle">Server</text>
+<line x1="560" y1="230" x2="560" y2="430" stroke="#a78bfa" stroke-width="5" opacity=".72" stroke-linecap="round"/>
+<rect x="492.0" y="313.0" width="136" height="30" rx="15" fill="#020617" opacity=".82"/><text x="560.0" y="335.0" fill="#e0f2fe" font-family="Inter,Arial" font-size="13" font-weight="800" text-anchor="middle">Manage</text>
+<rect x="85.0" y="194.0" width="150" height="72" rx="22" fill="url(#amber)" opacity=".95" filter="url(#glow)"/>
+<text x="160" y="226" fill="#020617" font-family="Inter,Arial" font-size="18" font-weight="900" text-anchor="middle">Internet</text>
+<text x="160" y="250" fill="#0f172a" font-family="Inter,Arial" font-size="12" font-weight="800" text-anchor="middle">ISP / Fiber</text>
+<rect x="255.0" y="194.0" width="150" height="72" rx="22" fill="url(#amber)" opacity=".95" filter="url(#glow)"/>
+<text x="330" y="226" fill="#020617" font-family="Inter,Arial" font-size="18" font-weight="900" text-anchor="middle">Modem / ONT</text>
+<text x="330" y="250" fill="#0f172a" font-family="Inter,Arial" font-size="12" font-weight="800" text-anchor="middle">Bridge/Router ISP</text>
+<rect x="465.0" y="194.0" width="190" height="72" rx="22" fill="url(#cyan)" opacity=".95" filter="url(#glow)"/>
+<text x="560" y="226" fill="#020617" font-family="Inter,Arial" font-size="18" font-weight="900" text-anchor="middle">MikroTik</text>
+<text x="560" y="250" fill="#0f172a" font-family="Inter,Arial" font-size="12" font-weight="800" text-anchor="middle">RouterOS • NAT • DHCP</text>
+<rect x="682.5" y="194.0" width="175" height="72" rx="22" fill="url(#violet)" opacity=".95" filter="url(#glow)"/>
+<text x="770" y="226" fill="#020617" font-family="Inter,Arial" font-size="18" font-weight="900" text-anchor="middle">Core Switch</text>
+<text x="770" y="250" fill="#0f172a" font-family="Inter,Arial" font-size="12" font-weight="800" text-anchor="middle">LAN / VLAN trunk</text>
+<rect x="865.0" y="104.0" width="150" height="72" rx="22" fill="url(#cyan)" opacity=".95" filter="url(#glow)"/>
+<text x="940" y="136" fill="#020617" font-family="Inter,Arial" font-size="18" font-weight="900" text-anchor="middle">Access Point</text>
+<text x="940" y="160" fill="#0f172a" font-family="Inter,Arial" font-size="12" font-weight="800" text-anchor="middle">Wi-Fi Staff/Tamu</text>
+<rect x="875.0" y="264.0" width="150" height="72" rx="22" fill="url(#cyan)" opacity=".95" filter="url(#glow)"/>
+<text x="950" y="296" fill="#020617" font-family="Inter,Arial" font-size="18" font-weight="900" text-anchor="middle">Lab Komputer</text>
+<text x="950" y="320" fill="#0f172a" font-family="Inter,Arial" font-size="12" font-weight="800" text-anchor="middle">Client DHCP</text>
+<rect x="695.0" y="384.0" width="150" height="72" rx="22" fill="url(#amber)" opacity=".95" filter="url(#glow)"/>
+<text x="770" y="416" fill="#020617" font-family="Inter,Arial" font-size="18" font-weight="900" text-anchor="middle">Server/NAS</text>
+<text x="770" y="440" fill="#0f172a" font-family="Inter,Arial" font-size="12" font-weight="800" text-anchor="middle">File • App • Backup</text>
+<rect x="485.0" y="394.0" width="150" height="72" rx="22" fill="url(#violet)" opacity=".95" filter="url(#glow)"/>
+<text x="560" y="426" fill="#020617" font-family="Inter,Arial" font-size="18" font-weight="900" text-anchor="middle">PC Admin</text>
+<text x="560" y="450" fill="#0f172a" font-family="Inter,Arial" font-size="12" font-weight="800" text-anchor="middle">WinBox / SSH</text>
+<rect x="56" y="610" width="1088" height="94" rx="24" fill="#020617" opacity=".62" stroke="#334155"/>
+<text x="84" y="642" fill="#cbd5e1" font-family="Inter,Arial" font-size="16" font-weight="700">• MikroTik biasanya menjadi gateway LAN, DHCP server, DNS cache, NAT, firewall, dan queue.</text>
+<text x="84" y="668" fill="#cbd5e1" font-family="Inter,Arial" font-size="16" font-weight="700">• Switch menjadi pusat distribusi kabel; AP melayani Wi-Fi; server menyimpan layanan lokal.</text>
+<text x="84" y="694" fill="#cbd5e1" font-family="Inter,Arial" font-size="16" font-weight="700">• Troubleshooting: cek client → switch/AP → MikroTik → ONT/ISP → internet.</text>
+<text x="1144" y="726" fill="#64748b" font-family="Inter,Arial" font-size="13" font-weight="800" text-anchor="end">Alvii Learning Hub</text></svg>
