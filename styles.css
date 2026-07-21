@@ -588,3 +588,92 @@ body.light .tag-cloud .tag {
     padding: 40px 24px !important;
   }
 }
+/* 
+  Theme Sync & Badge Highlight Patch 
+*/
+:root {
+  --text-gradient: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+  --bento-gradient-1: linear-gradient(145deg, var(--surface), rgba(56,189,248,0.05));
+  --bento-gradient-2: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(168,85,247,0.05));
+  --bento-quote-bg: var(--surface-2);
+  --badge-glow: rgba(168,85,247,0.3);
+  --badge-bg: rgba(168,85,247,0.15);
+  --badge-text: #e9d5ff;
+  --identity-glow: rgba(56,189,248,0.2);
+}
+
+body.light {
+  --text-gradient: linear-gradient(180deg, #0f172a 0%, #334155 100%);
+  --bento-gradient-1: linear-gradient(145deg, var(--surface), rgba(56,189,248,0.12));
+  --bento-gradient-2: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(168,85,247,0.1));
+  --bento-quote-bg: rgba(15,23,42,0.04);
+  --badge-glow: rgba(168,85,247,0.2);
+  --badge-bg: rgba(168,85,247,0.1);
+  --badge-text: #6b21a8;
+  --identity-glow: rgba(56,189,248,0.15);
+}
+
+.text-gradient {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-bento-1 { background: var(--bento-gradient-1); }
+.bg-bento-2 { background: var(--bento-gradient-2); }
+.bg-bento-quote { background: var(--bento-quote-bg); }
+
+.badge.special {
+  background: var(--badge-bg);
+  border-color: var(--badge-glow);
+  color: var(--badge-text);
+}
+
+/* Identitas & Badge AIClub */
+.identity-showcase {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.verified-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 16px 6px 6px;
+  background: var(--surface);
+  border: 1px solid var(--primary);
+  border-radius: 99px;
+  box-shadow: 0 8px 24px var(--identity-glow);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.verified-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--identity-glow);
+}
+
+.verified-pill img {
+  border-radius: 99px;
+  height: 36px;
+}
+
+/* Light mode specific badge image toggle */
+body.light .verified-pill img.dark-badge { display: none; }
+body:not(.light) .verified-pill img.light-badge { display: none; }
+
+/* Remove inline gradient rules that break light mode */
+.hero-statement h1 {
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+body.light .hero-statement h1 {
+  background: none;
+  -webkit-text-fill-color: initial;
+}
