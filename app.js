@@ -1,48 +1,69 @@
 const root = document.body;
-const key = 'ananta-theme';
-const saved = localStorage.getItem(key);
-if (saved === 'light') root.classList.add('light');
+const themeKey = 'ananta-theme';
+const savedTheme = localStorage.getItem(themeKey);
+const systemLight = window.matchMedia?.('(prefers-color-scheme: light)').matches;
 
-const toggle = document.getElementById('themeToggle');
-if (toggle) {
-  const paint = () => {
-    const isLight = root.classList.contains('light');
-    toggle.textContent = isLight ? '🌙' : '☀️';
-    toggle.setAttribute('aria-label', isLight ? 'Aktifkan dark mode' : 'Aktifkan light mode');
-  };
-  paint();
-  toggle.addEventListener('click', () => {
-    root.classList.toggle('light');
-    localStorage.setItem(key, root.classList.contains('light') ? 'light' : 'dark');
-    paint();
-  });
+if (savedTheme === 'light' || (!savedTheme && systemLight)) {
+  root.classList.add('light');
 }
 
-document.querySelectorAll('[data-year]').forEach((el) => {
-  el.textContent = new Date().getFullYear();
+const themeToggle = document.getElementById('themeToggle');
+const paintTheme = () => {
+  if (!themeToggle) return;
+  const isLight = root.classList.contains('light');
+  themeToggle.textContent = isLight ? '☾' : '☀';
+  themeToggle.setAttribute('aria-label', isLight ? 'Aktifkan dark mode' : 'Aktifkan light mode');
+  themeToggle.setAttribute('title', isLight ? 'Dark mode' : 'Light mode');
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', isLight ? '#f3f6f8' : '#07090d');
+};
+paintTheme();
+
+themeToggle?.addEventListener('click', () => {
+  root.classList.toggle('light');
+  localStorage.setItem(themeKey, root.classList.contains('light') ? 'light' : 'dark');
+  paintTheme();
 });
 
-const line = document.querySelector('.scroll-line');
-const updateScroll = () => {
-  if (!line) return;
-  const total = document.documentElement.scrollHeight - window.innerHeight;
-  const current = total > 0 ? (window.scrollY / total) * 100 : 0;
-  line.style.width = `${Math.min(100, Math.max(0, current))}%`;
-};
-window.addEventListener('scroll', updateScroll, { passive: true });
-updateScroll();
+const menuToggle = document.getElementById('menuToggle');
+menuToggle?.addEventListener('click', () => {
+  const open = root.classList.toggle('menu-open');
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.textContent = open ? '×' : '≡';
+});
 
-const items = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window && items.length) {
-  const io = new IntersectionObserver((entries) => {
+document.querySelectorAll('.nav-links a').forEach((link) => {
+  link.addEventListener('click', () => {
+    root.classList.remove('menu-open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    if (menuToggle) menuToggle.textContent = '≡';
+  });
+});
+
+document.querySelectorAll('[data-year]').forEach((element) => {
+  element.textContent = new Date().getFullYear();
+});
+
+const scrollLine = document.querySelector('.scroll-line');
+const updateScrollLine = () => {
+  if (!scrollLine) return;
+  const total = document.documentElement.scrollHeight - innerHeight;
+  const progress = total > 0 ? (scrollY / total) * 100 : 0;
+  scrollLine.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+};
+addEventListener('scroll', updateScrollLine, { passive: true });
+updateScrollLine();
+
+const revealItems = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.14 });
-  items.forEach((el) => io.observe(el));
+  }, { threshold: 0.12, rootMargin: '0px 0px -32px' });
+  revealItems.forEach((item) => observer.observe(item));
 } else {
-  items.forEach((el) => el.classList.add('in-view'));
+  revealItems.forEach((item) => item.classList.add('in-view'));
 }
