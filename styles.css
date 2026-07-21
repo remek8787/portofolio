@@ -414,3 +414,165 @@ body.light .card:hover {
   border-radius: 99px; /* Pill shape for buttons is very modern */
   font-weight: 600;
 }
+/* BENTO GRID RECONCEPT */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.bento-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.bento-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 72px rgba(0,0,0,0.4);
+  border-color: rgba(56,189,248,0.4);
+}
+body.light .bento-item:hover {
+  box-shadow: 0 32px 64px rgba(15,23,42,0.12);
+  border-color: rgba(56,189,248,0.3);
+}
+
+.bento-col-4 { grid-column: span 4; }
+.bento-col-6 { grid-column: span 6; }
+.bento-col-8 { grid-column: span 8; }
+.bento-col-12 { grid-column: span 12; }
+
+@media (max-width: 992px) {
+  .bento-col-4, .bento-col-6, .bento-col-8 { grid-column: span 12; }
+}
+
+.bento-img {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+.bento-item:hover .bento-img {
+  opacity: 0.3;
+}
+.bento-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-statement {
+  padding: 120px 0 80px;
+  max-width: 900px;
+}
+.hero-statement h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+  margin-bottom: 32px;
+  background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body.light .hero-statement h1 {
+  background: linear-gradient(180deg, #0f172a 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-statement .lead {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 760px;
+  margin-bottom: 48px;
+}
+
+.glow-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.2);
+  position: relative;
+  overflow: hidden;
+}
+.glow-btn::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+.glow-btn:hover::before { left: 100%; }
+.glow-btn:hover { border-color: rgba(255,255,255,0.5); }
+body.light .glow-btn { border-color: rgba(15,23,42,0.2); }
+body.light .glow-btn:hover { border-color: rgba(15,23,42,0.5); }
+body.light .glow-btn::before { background: linear-gradient(90deg, transparent, rgba(15,23,42,0.05), transparent); }
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+.tag-cloud .tag {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+body.light .tag-cloud .tag {
+  background: rgba(15,23,42,0.03);
+  border-color: rgba(15,23,42,0.1);
+}
+
+.bento-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+}
+.bento-kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 16px;
+  display: block;
+}
+.bento-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: auto;
+  padding-top: 32px;
+  transition: gap 0.2s ease;
+}
+.bento-link:hover { gap: 12px; color: var(--primary); }
+
+.huge-number {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 24px;
+}
