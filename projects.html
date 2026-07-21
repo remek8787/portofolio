@@ -26,122 +26,45 @@
     </div>
   </div>
 
-  <main id="main-content">
-  <section class="page-title projects-hero-redesign">
+  <main id="main-content" class="structured-projects">
+  <section class="page-title projects-hero-redesign structured-project-hero">
     <div class="container">
-      <span class="badge">Live systems showcase</span>
-      <h1>Professional project portfolio: live systems, billing platforms, web ops, dan automation work.</h1>
-      <p>Halaman ini menampilkan project secara lebih rapi: fokus pada konteks bisnis/operasional, status live, dan link preview yang aman dibuka publik.</p>
-      <div class="project-hero-actions">
-        <a class="btn primary" href="https://appsbilling.dentasejahteragroup.my.id/v3/" target="_blank" rel="noopener">Preview AppsBilling V3</a>
-        <a class="btn secondary" href="/contact.html">Diskusi project</a>
+      <span class="badge">Structured project portfolio</span>
+      <h1>Project dikategorikan supaya mudah dibaca: billing, operations, business apps, dan automation.</h1>
+      <p>Tujuannya sederhana: visitor bisa langsung paham mana project live utama, mana sistem pendukung, dan kemampuan apa yang dibuktikan dari masing-masing project.</p>
+      <div class="project-hero-actions"><a class="btn primary" href="https://appsbilling.dentasejahteragroup.my.id/v3/" target="_blank" rel="noopener">Preview AppsBilling V3</a><a class="btn secondary" href="/#capabilities">Lihat capability</a></div>
+    </div>
+  </section>
+
+  <section class="block category-section">
+    <div class="container">
+      <div class="portfolio-categories">
+        <a href="#billing">Billing Systems</a><a href="#business">Business Apps</a><a href="#ops">Ops & Monitoring</a><a href="#learning">Learning & Brand</a>
       </div>
     </div>
   </section>
 
-  <section class="block project-wall-section">
+  <section id="billing" class="block project-wall-section">
     <div class="container">
-      <div class="section-head wide-head">
-        <div>
-          <div class="section-kicker">Selected live systems</div>
-          <h2>Sistem yang sudah berjalan dan relevan untuk portfolio profesional.</h2>
-        </div>
-        <p>Sebagian sistem adalah aplikasi login/internal; link yang ditampilkan hanya entry point live atau preview publik.</p>
-      </div>
+      <div class="section-head wide-head"><div><div class="section-kicker">Category 01</div><h2>Billing systems.</h2></div><p>Project billing ditata sebagai product family, bukan kartu acak.</p></div>
       <div class="product-wall">
-        <article class="product-card flagship">
-          <div class="product-status"><span></span> Live Billing</div>
-          <h3>AppsBilling V3</h3>
-          <p>Billing ISP modern untuk pelanggan, paket, invoice, pembayaran, user, dan arah network/PPPoE. Ini menjadi basis banyak instance billing berikutnya.</p>
-          <div class="project-meta"><span>PHP</span><span>SQLite</span><span>ISP Billing</span><span>V3</span></div>
-          <a href="https://appsbilling.dentasejahteragroup.my.id/v3/" target="_blank" rel="noopener">Buka preview →</a>
-        </article>
-        <article class="product-card">
-          <div class="product-status"><span></span> Platform</div>
-          <h3>AppsBilling Commercial</h3>
-          <p>Root platform AppsBilling untuk arah komersial/multi-mitra, landing, dan positioning produk.</p>
-          <div class="project-meta"><span>SaaS Direction</span><span>Landing</span></div>
-          <a href="https://appsbilling.dentasejahteragroup.my.id/" target="_blank" rel="noopener">Buka live →</a>
-        </article>
-        <article class="product-card">
-          <div class="product-status"><span></span> Instance</div>
-          <h3>Billing MRTNET</h3>
-          <p>Instance billing ISP mandiri untuk MRTNET dengan database terpisah dan flow AppsBilling V3.</p>
-          <div class="project-meta"><span>Billing</span><span>ISP</span><span>Separate DB</span></div>
-          <a href="https://billing.mrtnet.my.id/" target="_blank" rel="noopener">Buka live →</a>
-        </article>
-        <article class="product-card">
-          <div class="product-status"><span></span> Instance</div>
-          <h3>Billing DSG Tegal</h3>
-          <p>Instance billing terpisah untuk operasional DSG Tegal, siap dipakai tanpa mengganggu instance lain.</p>
-          <div class="project-meta"><span>Billing</span><span>ISP</span><span>VPS</span></div>
-          <a href="https://billing.dsgtegal.my.id/" target="_blank" rel="noopener">Buka live →</a>
-        </article>
-        <article class="product-card">
-          <div class="product-status"><span></span> Legacy Live</div>
-          <h3>Billing Dentatirta</h3>
-          <p>Legacy Billing-Air DENTA TIRTA yang sudah dimigrasi dan distabilkan di VPS, tetap mempertahankan workflow lama.</p>
-          <div class="project-meta"><span>Legacy PHP</span><span>Migration</span></div>
-          <a href="https://billing.dentatirta.my.id/" target="_blank" rel="noopener">Buka live →</a>
-        </article>
-        <article class="product-card">
-          <div class="product-status"><span></span> Borneo</div>
-          <h3>AppsBilling Borneo Network</h3>
-          <p>Instance AppsBilling V3 untuk Borneo Network dengan database mandiri dan awal data bersih.</p>
-          <div class="project-meta"><span>Billing</span><span>Borneo</span></div>
-          <a href="https://appsbilling.borneonetwork.my.id/v3/" target="_blank" rel="noopener">Buka live →</a>
-        </article>
+        <article class="product-card flagship"><div class="product-status"><span></span> Primary</div><h3>AppsBilling V3</h3><p>Billing ISP modern untuk pelanggan, paket, invoice, pembayaran, user, dan arah network/PPPoE.</p><div class="project-meta"><span>PHP</span><span>SQLite</span><span>ISP Billing</span></div><a href="https://appsbilling.dentasejahteragroup.my.id/v3/" target="_blank" rel="noopener">Buka preview →</a></article>
+        <article class="product-card"><div class="product-status"><span></span> Platform</div><h3>AppsBilling Commercial</h3><p>Landing/platform untuk arah produk AppsBilling multi-mitra.</p><a href="https://appsbilling.dentasejahteragroup.my.id/" target="_blank" rel="noopener">Buka live →</a></article>
+        <article class="product-card"><div class="product-status"><span></span> Instance</div><h3>Billing MRTNET</h3><p>Instance billing ISP mandiri dengan database terpisah.</p><a href="https://billing.mrtnet.my.id/" target="_blank" rel="noopener">Buka live →</a></article>
+        <article class="product-card"><div class="product-status"><span></span> Instance</div><h3>Billing DSG Tegal</h3><p>Instance billing terpisah untuk operasional DSG Tegal.</p><a href="https://billing.dsgtegal.my.id/" target="_blank" rel="noopener">Buka live →</a></article>
+        <article class="product-card"><div class="product-status"><span></span> Legacy</div><h3>Billing Dentatirta</h3><p>Legacy Billing-Air yang dimigrasi dan distabilkan di VPS.</p><a href="https://billing.dentatirta.my.id/" target="_blank" rel="noopener">Buka live →</a></article>
+        <article class="product-card"><div class="product-status"><span></span> Borneo</div><h3>AppsBilling Borneo Network</h3><p>Instance AppsBilling V3 untuk Borneo Network dengan database mandiri.</p><a href="https://appsbilling.borneonetwork.my.id/v3/" target="_blank" rel="noopener">Buka live →</a></article>
       </div>
     </div>
   </section>
 
-  <section class="block support-wall-section">
-    <div class="container">
-      <div class="section-head wide-head">
-        <div>
-          <div class="section-kicker">Ops, learning, clinic</div>
-          <h2>Project pendukung yang memperkuat ekosistem.</h2>
-        </div>
-        <p>Selain billing, ada sistem edukasi, klinik, monitoring, dan app hub yang menunjukkan pola kerja end-to-end.</p>
-      </div>
-      <div class="support-wall">
-        <article class="support-card"><h3>DSG Apps Hub</h3><p>Launcher publik untuk aplikasi penting DSG.</p><a href="https://apps.dentasejahteragroup.my.id/" target="_blank" rel="noopener">Buka hub →</a></article>
-        <article class="support-card"><h3>Klinik Dentamedika</h3><p>Sistem klinik live: pasien, antrian, rekam medis, billing, master obat/tindakan.</p><a href="https://klinik.dentamedika.com/" target="_blank" rel="noopener">Buka live →</a></article>
-        <article class="support-card"><h3>Alvii Learning Hub</h3><p>Portal belajar jaringan dari dasar sampai master, visual dan public-friendly.</p><a href="https://apps.anantasatriya.my.id/" target="_blank" rel="noopener">Buka learning →</a></article>
-        <article class="support-card"><h3>DSG Router Monitoring</h3><p>Monitoring router utama, alert down, state tracking, dan laporan operasional ringkas.</p><a href="/contact.html">Diskusikan →</a></article>
-        <article class="support-card"><h3>NMS GPON / ISP Toolkit</h3><p>Konsep monitoring ONU/OLT, optical power, alarm, provisioning helper, dan observability ISP.</p><a href="/contact.html">Diskusikan →</a></article>
-      </div>
-    </div>
-  </section>
+  <section id="business" class="block support-wall-section"><div class="container"><div class="section-head wide-head"><div><div class="section-kicker">Category 02</div><h2>Business apps.</h2></div><p>Aplikasi operasional yang membantu kerja admin/tim lapangan.</p></div><div class="support-wall"><article class="support-card"><h3>DSG Apps Hub</h3><p>Launcher publik untuk aplikasi penting DSG.</p><a href="https://apps.dentasejahteragroup.my.id/" target="_blank" rel="noopener">Buka hub →</a></article><article class="support-card"><h3>Klinik Dentamedika</h3><p>Sistem klinik live: pasien, antrian, rekam medis, billing, master obat/tindakan.</p><a href="https://klinik.dentamedika.com/" target="_blank" rel="noopener">Buka live →</a></article><article class="support-card"><h3>Inventory / Internal Tools</h3><p>Workflow gudang, data operasional, dan dashboard internal sesuai kebutuhan tim.</p><a href="/contact.html">Diskusikan →</a></article></div></div></section>
 
-  <section class="block professional-stack-section">
-    <div class="container">
-      <div class="section-head wide-head">
-        <div>
-          <div class="section-kicker">Capability map</div>
-          <h2>Area kerja yang membentuk value portfolio ini.</h2>
-        </div>
-        <p>Desain portfolio dibuat lebih profesional dengan menonjolkan kemampuan inti, bukan sekadar banyak link.</p>
-      </div>
-      <div class="capability-wall">
-        <div><strong>ISP Billing Systems</strong><span>Customer, invoice, payment, package, multi-instance deployment.</span></div>
-        <div><strong>Network Operations</strong><span>Monitoring, routing, GPON/OLT workflow, alerting, operational documentation.</span></div>
-        <div><strong>Business Web Apps</strong><span>Clinic, app hub, admin dashboards, live repair loop.</span></div>
-        <div><strong>AI-assisted Delivery</strong><span>Design polish, content structure, visual assets, automation helper.</span></div>
-      </div>
-    </div>
-  </section>
+  <section id="ops" class="block support-wall-section"><div class="container"><div class="section-head wide-head"><div><div class="section-kicker">Category 03</div><h2>Ops & monitoring.</h2></div><p>Kemampuan network dan monitoring ditampilkan sebagai capability, bukan referensi lama yang membingungkan.</p></div><div class="support-wall"><article class="support-card"><h3>DSG Router Monitoring</h3><p>Monitoring router utama, alert down, state tracking, dan laporan operasional ringkas.</p><a href="/contact.html">Diskusikan →</a></article><article class="support-card"><h3>NMS GPON / ISP Toolkit</h3><p>Konsep monitoring ONU/OLT, optical power, alarm, provisioning helper, dan observability ISP.</p><a href="/contact.html">Diskusikan →</a></article><article class="support-card"><h3>Network Operations</h3><p>BGP, MikroTik, GPON/OLT workflow, documentation, dan incident response.</p><a href="/#capabilities">Lihat capability →</a></article></div></div></section>
 
-  <section class="block reveal">
-    <div class="container cta-band redesign-cta">
-      <div>
-        <div class="section-kicker">Cara saya membangun</div>
-        <h2>Mulai dari kebutuhan operasional, lalu dibikin usable, baru dipoles.</h2>
-        <p>Setiap sistem di atas diarahkan supaya ringan, mudah dicek, punya backup, dan bisa dikembangkan tanpa mengganggu layanan yang sudah berjalan.</p>
-      </div>
-      <a class="btn primary" href="/contact.html">Hubungi saya</a>
-    </div>
-  </section>
+  <section id="learning" class="block support-wall-section"><div class="container"><div class="section-head wide-head"><div><div class="section-kicker">Category 04</div><h2>Learning & brand.</h2></div><p>Project publik untuk edukasi, personal brand, dan AI-assisted delivery.</p></div><div class="support-wall"><article class="support-card"><h3>Alvii Learning Hub</h3><p>Portal belajar jaringan dari dasar sampai master, visual dan public-friendly.</p><a href="https://apps.anantasatriya.my.id/" target="_blank" rel="noopener">Buka learning →</a></article><article class="support-card"><h3>Network Brand Assets</h3><p>Eksplorasi logo/aset brand ISP/network memakai workflow AI image generation.</p><a href="/contact.html">Diskusikan →</a></article><article class="support-card"><h3>AIClub Builder</h3><p>Badge/profile builder untuk menunjukkan aktivitas AI-assisted building.</p><a href="https://aiclub.id/builder/s00_01KWRFQVJTS4C02767YQ85QVTN" target="_blank" rel="noopener">Buka profile →</a></article></div></div></section>
+
+  <section class="block reveal"><div class="container cta-band redesign-cta"><div><div class="section-kicker">Next collaboration</div><h2>Butuh sistem yang tertata dari UI sampai workflow?</h2><p>Saya bisa bantu dari konsep, UI/UX, implementasi, deployment, sampai dokumentasi operasional.</p></div><a class="btn primary" href="/contact.html">Hubungi saya</a></div></section>
   </main>
 
   <footer class="footer">
