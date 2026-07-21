@@ -576,3 +576,15 @@ body.light .tag-cloud .tag {
   -webkit-text-fill-color: transparent;
   margin-bottom: 24px;
 }
+/* About page specific styles */
+.bento-item[style*="border-radius: 99px"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .bento-item[style*="border-radius: 99px"] {
+    border-radius: 40px !important;
+    padding: 40px 24px !important;
+  }
+}
