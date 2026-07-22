@@ -497,3 +497,14 @@ body.light .credential-copy .credential-owner, body.light .credential-action spa
   .credential-seal { width: 44px; height: 44px; }
   .credential-action span { display: none; }
 }
+
+/* Public identity graph */
+.identity-meta a { color:inherit; }
+.identity-meta a:hover { color:var(--cyan); }
+.identity-link-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:20px; }
+.identity-link-grid a { padding:16px; border:1px solid var(--line); border-radius:16px; background:var(--surface-2); transition:.2s ease; }
+.identity-link-grid a:hover { transform:translateY(-2px); border-color:var(--line-strong); }
+.identity-link-grid span { display:block; color:var(--muted); font:400 9px/1.3 var(--mono); text-transform:uppercase; letter-spacing:.08em; }
+.identity-link-grid strong { display:block; margin-top:7px; font-size:12px; }
+.source-note { margin-top:16px; color:var(--muted); font:400 9px/1.6 var(--mono); }
+@media (max-width:640px) { .identity-link-grid { grid-template-columns:1fr; } }
